@@ -204,12 +204,9 @@ const Report: React.FC<Props> = (props) => {
         // Add scale control
         cloneMap.current.addControl(new ScaleControl());
 
-        // loadTeacups(cloneMap.current);
-        cloneMap.current.once('load', () => {
-            if (isMounted) {
-                setIsMapLoaded(true);
-            }
-        });
+        if (isMounted) {
+            setIsMapLoaded(true);
+        }
 
         return () => {
             isMounted = false;
